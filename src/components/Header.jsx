@@ -1,4 +1,5 @@
 import { NavLink, Link } from "react-router-dom";
+import userImg from "../assets/images/avatar-icon.png";
 
 function Navbar() {
   return (
@@ -25,6 +26,9 @@ function Navbar() {
         >
           Vans
         </NavLink>
+        <Link to="login" className="login-link">
+          <img src={userImg} className="login-icon" />
+        </Link>
       </nav>
     </header>
   );

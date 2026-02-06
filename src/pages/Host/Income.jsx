@@ -1,5 +1,9 @@
-export default function Income() {
+import incomeImage from "../../assets/images/income-graph.png";
+
+export default function Reviews() {
   return (
-    <h1>Hi from Income</h1>
-  )
+    <div className="place-holder-img-wrap">
+      <img src={incomeImage} />
+    </div>
+  );
 }

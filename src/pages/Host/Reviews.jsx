@@ -1,5 +1,9 @@
+import reviewsImage from "../../assets/images/reviews-graph.png";
+
 export default function Reviews() {
   return (
-    <h1>Hi from reveiws</h1>
-  )
+    <div className="place-holder-img-wrap">
+      <img src={reviewsImage} />
+    </div>
+  );
 }
