@@ -1,15 +1,36 @@
 import React from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
+import { loginUser } from "../api";
 
 export default function Login() {
   const [loginFormData, setLoginFormData] = React.useState({
     email: "",
     password: "",
   });
+  const [status, setStatus] = React.useState("idle");
+  const [error, setError] = React.useState(null);
+
+  const location = useLocation();
+  const navigate = useNavigate();
+  const from = location.state?.from || "/host";
+  const warnMsg = location.state?.message; //optional chaining is to avoid having an error when theres no messaage value
 
   function handleSubmit(e) {
     e.preventDefault();
-    console.log(loginFormData);
+    setStatus("submitting");
+
+    loginUser(loginFormData)
+      .then((data) => {
+        setError(null);
+        localStorage.setItem("loggedin", true);
+        navigate(from, { replace: true });
+      })
+      .catch((err) => {
+        setError(err);
+      })
+      .finally(() => {
+        setStatus("idle");
+      });
   }
 
   function handleChange(e) {
@@ -20,13 +41,13 @@ export default function Login() {
     }));
   }
 
-  const location = useLocation();
-  const warnMsg = location.state?.message; //optional chaining is to avoid having an error when theres no messaage value
-
   return (
     <div className="login-container">
-      {warnMsg ? <h3 className="login-first">{warnMsg}</h3> : null}
+      {warnMsg ? <h3 className="login-error">{warnMsg}</h3> : null}
       <h1>Sign in to your account</h1>
+      {error?.message ? (
+        <h3 className="login-error">{error?.message}</h3>
+      ) : null}
       <form onSubmit={handleSubmit} className="login-form">
         <input
           name="email"
@@ -42,7 +63,9 @@ export default function Login() {
           placeholder="Password"
           value={loginFormData.password}
         />
-        <button>Log in</button>
+        <button disabled={status === "submitting"}>
+          {status === "submitting" ? "Logging in.." : "Log in"}
+        </button>
       </form>
     </div>
   );
