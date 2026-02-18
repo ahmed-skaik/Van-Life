@@ -85,10 +85,9 @@ This project focuses heavily on mastering React Router 6+, including:
 
 ## 🖼 Screenshots
 
-```md
-![Login Page](./src/assets/login.png)
-![Vans Page](./src/assets/vans.png)
-![Host Vans Section](./src/assets/host-vans.png)
+![Login Page](./assets/login.png)
+![Vans Page](./assets/vans.png)
+![Host Vans Section](./assets/host-vans.png)
 
 ---
 
@@ -124,6 +123,7 @@ This project focuses heavily on mastering React Router 6+, including:
 
 ## 🚀 Run Locally
 
+```md
 # Clone the repository
 git clone https://github.com/ahmed-skaik/Van-Life.git
 
@@ -135,6 +135,8 @@ npm install
 
 # Start development server
 npm run dev
+```md
+
 
 ---
 
