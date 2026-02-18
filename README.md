@@ -30,7 +30,7 @@ It works on desktop, but the layout and UI were optimized specifically for small
 To access the Host dashboard:
 
 Email: b@b.com  
-Password: p123  
+Password: p123
 
 (Authentication is simulated for educational purposes.)
 
@@ -39,12 +39,14 @@ Password: p123
 ## 🏆 Features
 
 ### 🚐 Vans Section
+
 - Browse all available vans
 - Filter vans by type
 - View individual van details
 - Dynamic routing using URL parameters
 
 ### 👤 Host Section (Protected Routes)
+
 - Host Dashboard
 - Host Vans management
 - Income page
@@ -52,11 +54,13 @@ Password: p123
 - Nested routing inside host layout
 
 ### 🔒 Authentication
+
 - Login form
 - Route protection
 - Redirect logic for unauthenticated users
 
 ### ⚡ Routing Architecture
+
 - Nested routes
 - Layout routes
 - Dynamic routes (`/vans/:id`)
@@ -99,11 +103,13 @@ This project focuses heavily on mastering React Router 6+, including:
 - JavaScript (ES6+)
 - CSS
 - Netlify (Deployment)
+- Miragejs
 
 ---
 
 ## 📂 Project Structure (Conceptual Overview)
 
+```
 /pages
    ├── Home
    ├── Vans
@@ -118,12 +124,13 @@ This project focuses heavily on mastering React Router 6+, including:
 /layouts
 /components
 /utils
+```
 
 ---
 
 ## 🚀 Run Locally
 
-```md
+```bash
 # Clone the repository
 git clone https://github.com/ahmed-skaik/Van-Life.git
 
@@ -135,8 +142,7 @@ npm install
 
 # Start development server
 npm run dev
-```md
-
+```
 
 ---
 
@@ -144,13 +150,9 @@ npm run dev
 
 This project was built as part of a React Router learning journey to deeply understand client-side routing patterns used in modern production applications.
 
-The goal was not only to build pages, but to understand how routing architecture works in scalable React applications.
-
----
+## The goal was not only to build pages, but to understand how routing architecture works in scalable React applications.
 
 ## 📄 License
 
 This project is open source and available under the MIT License.
-
-
 
